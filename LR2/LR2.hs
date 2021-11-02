@@ -12,6 +12,8 @@ remrep xs = reverse (iter xs [])
         iter (x:xs) res = iter xs (x:res)
         iter [] res = res
 
+-- Команды,щоб працювала програма - :l путь к файлу(//Users//...//LR2.hs)
+-- remrep [1,1,1,1,2,2,2,3,3,3]
 
 -- Завдання №2.Визначити, чи два числа взаємно простi.
 
@@ -23,6 +25,8 @@ isPrime f s | (s>f) = isPrime s f
 mutual :: Integer -> Integer -> Bool 
 mutual x y = (isPrime x y) == 1
 
+-- Команды,щоб працювала програма - :l путь к файлу(//Users//...//LR2.hs)
+-- isPrime 5 6
 
 -- Висновок:Під час виконання лабораторної роботи,я вивичив,як працюють рекурсивні функції в haskell та як працюють кортежі
 
