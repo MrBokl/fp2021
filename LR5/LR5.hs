@@ -1,31 +1,24 @@
-repeatLine line n =  do
-    l <- line
-    replicate n [l]
-
+import Data.Map (fromListWith, toList)
+frequency :: (Ord a) => [a] -> [(a, Int)]
+frequency xs = toList (fromListWith (+) [(x, 1) | x <- xs])
 fromKeyboardToConsole = do
     putStrLn "Enter line:"
     line <- getLine
-    putStrLn "Enter number of repeats:"
-    inputN <- getLine
-    let n = read inputN :: Int
-    answerArray <- return (repeatLine line n)
+    answerArray <- return (frequency line)
     print answerArray
 
 fromKeyboardToFile = do
     putStrLn "Enter line:"
     line <- getLine
-    putStrLn "Enter number of repeats:"
-    inputN <- getLine
-    let n = read inputN :: Int
-    answerArray <- return (repeatLine line n)
-    writeFile "fromKeyboardOutput.txt" (show answerArray)
+    answerArray <- return (frequency line )
+    writeFile "LR5//fromKeyboardOutput.txt" (show answerArray)
 
 fromFileToConsole = do
-        line <- readFile "input.txt"
-        answerArray <- return (repeatLine line 3)
+        line <- readFile "LR5//input.txt"
+        answerArray <- return (frequency line )
         print(answerArray)
 
 fromFileToFile = do
-    line <- readFile "input.txt"
-    answerArray <- return (repeatLine line 3)
-    writeFile "fromFileOutput" (show answerArray)
+    line <- readFile "LR5//input.txt"
+    answerArray <- return (frequency line )
+    writeFile "LR5//fromOutPut" (show answerArray)
