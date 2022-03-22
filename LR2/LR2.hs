@@ -30,3 +30,4 @@ mutual x y = (isPrime x y) == 1
 
 -- Висновок:Під час виконання лабораторної роботи,я вивичив,як працюють рекурсивні функції в haskell та як працюють кортежі
 
+--jdkfgjldjglkdhjgvlkdhjvglksdhkl
